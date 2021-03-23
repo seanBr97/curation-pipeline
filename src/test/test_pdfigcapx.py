@@ -25,9 +25,13 @@ print("Total files: %d\nTotal PDFs: %d\nTotal successes: %d" %
       (total_files, total_pdf, total_successes))
 
 # cleanup residual xpdf_ folders 
+print('after print files')
 os.chdir(output_path)
 cwd = os.getcwd()
+print(cwd)
 files = os.listdir(cwd)
 for file in files:
+  print(file)
   if (file[:5] == 'xpdf_'): 
+    print('in if')
     shutil.rmtree(file)
