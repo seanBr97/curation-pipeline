@@ -1,6 +1,7 @@
 import sys
 from os import getcwd
 from os.path import join, abspath
+import shutil
 
 current_folder = getcwd()
 source_folder = abspath(join(current_folder, '..'))
@@ -21,3 +22,11 @@ total_files, total_pdf, total_successes = p.extract(input_path, output_path)
 
 print("Total files: %d\nTotal PDFs: %d\nTotal successes: %d" %
       (total_files, total_pdf, total_successes))
+
+# cleanup residual xpdf_ folders 
+os.chdir(output_path)
+cwd = os.getcwd()
+files = os.listdir(cwd)
+for file in files:
+  if (file[:5] == 'xpdf_'): 
+    shutil.rmtree(file)
