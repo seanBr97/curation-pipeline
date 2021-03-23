@@ -71,7 +71,7 @@ RUN pip install --upgrade pip && pip install lxml Pillow scipy selenium && pip3 
 
 # force busting the cache to clone again repo
 ARG CACHEBUST=1
-RUN cd /home && git clone https://github.com/uic-evl/curation-pipeline.git && cd curation-pipeline && git checkout python3
+RUN cd /home && git clone https://github.com/seanBr97/curation-pipeline.git && cd curation-pipeline && git checkout python3
 
 
 # ---------
